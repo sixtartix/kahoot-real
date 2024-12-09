@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règles du Jeu - Quiz Interactif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        ol, ul {
+            padding-left: 30px;
+        }
+        code {
+            font-family: 'Courier New', monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+        }
+        .notice-header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="notice-header">Règles et Déroulement - Quiz Interactif</div>
+        <h1>Quiz Interactif</h1>
+
+        <h2>Description du Jeu</h2>
+        <p>Le quiz interactif est un jeu de culture générale qui oppose de 1 à 4 joueurs. Chaque joueur répond à des questions à l’aide d’une manette équipée de boutons lumineux (LED). Le but du jeu est d’avancer son pion jusqu’à la dernière case pour remporter la victoire.</p>
+
+        <h2>Composants du Plateau</h2>
+        <ul>
+            <li><strong>Écran LCD I2C :</strong> Affiche les scores, les instructions et les messages de jeu.</li>
+            <li><strong>Boutons Poussoirs à LED :</strong> Indiquent les options de réponse (nombre de LEDs allumées selon les choix).</li>
+            <li><strong>Manettes :</strong> Branchées au plateau via des câbles, elles contrôlent les réponses des joueurs.</li>
+            <li><strong>Enceintes :</strong> Diffusent les questions vocalement et les sons d’ambiance.</li>
+        </ul>
+
+        <h2>Règles du Jeu</h2>
+        <ol>
+            <li>Chaque joueur commence avec un pion placé sur la case de départ.</li>
+            <li>Les questions sont posées par l’Arduino via les enceintes.</li>
+            <li>Les réponses se donnent en appuyant sur les boutons de la manette.</li>
+            <li>Les LEDs des boutons s'allument en fonction du nombre de choix disponibles (2, 3 ou 4).</li>
+            <li>Deux modes de questions :
+                <ul>
+                    <li><strong>Tour par tour :</strong> Chaque joueur répond à son tour.</li>
+                    <li><strong>Question flash :</strong> Le premier joueur à répondre obtient un bonus s’il a raison.</li>
+                </ul>
+            </li>
+            <li>Bonne réponse : le joueur avance son pion sur le plateau, et son score est mis à jour sur l’écran LCD.</li>
+            <li>Mauvaise réponse : aucun point n’est attribué, et le tour passe au joueur suivant.</li>
+        </ol>
+
+        <h2>Déroulement du Jeu</h2>
+        <h3>1. Installation</h3>
+        <p>Connectez les manettes au plateau. Le nombre de joueurs est automatiquement détecté. L’écran LCD affiche les noms des joueurs et leur score initial (0).</p>
+
+        <h3>2. Choix du Scénario</h3>
+        <p>Un joueur sélectionne un thème ou une génération (culture générale, sports, cinéma, etc.) parmi les options disponibles.</p>
+
+        <h3>3. Questions et Réponses</h3>
+        <ul>
+            <li>L’Arduino pose une question vocalement via les enceintes.</li>
+            <li>Les LEDs des boutons poussoirs s’allument pour représenter les options.</li>
+            <li>Les joueurs appuient sur le bouton correspondant à leur réponse.</li>
+        </ul>
+
+        <h3>4. Mise à Jour du Plateau</h3>
+        <p>Si la réponse est correcte, le joueur avance son pion sur le plateau et son score est mis à jour. Sinon, il reste sur place.</p>
+
+        <h3>5. Fin de Partie</h3>
+        <p>Le premier joueur à atteindre la dernière case remporte la partie. Un message de félicitations est affiché sur l’écran LCD.</p>
+
+        <h2>Conclusion</h2>
+        <p>Le quiz interactif est un jeu amusant et éducatif qui combine réflexion, rapidité et interactivité. Profitez de ce moment de partage en famille ou entre amis !</p>
+
+        <p>Conçu par : Dorian Guerin et son équipe, pour le plaisir des joueurs de tous âges.</p>
+    </div>
+</body>
+</html>
